@@ -7,3 +7,10 @@ Execute the shell script `01-install-portainer.sh`. This script will create a vo
 You can check the linux installation guide at https://docs.portainer.io/start/install-ce/server/docker/linux
 
 If you browser do not open automatically go to https://localhost:9443
+
+You will have to create a administration account
+
+E.G.
+
+username: supervisor
+password: APassword12CharMin!
