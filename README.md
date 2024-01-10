@@ -31,9 +31,8 @@ In the interface, you should gives an environment name and also the environment 
 E.G.
 
 name: docker-local-env
-Environment address: 10.0.0.10:9001
 
-dckr_pat_V5zbCBPzn4s_8Ae6i2E7PLL9h7k
+Environment address: 10.0.0.10:9001
 
 ### How to prepare your dockerised app and use it in Portainer
 
@@ -47,3 +46,5 @@ dckr_pat_V5zbCBPzn4s_8Ae6i2E7PLL9h7k
 8. The container should be running (https://localhost:9443/#!/2/docker/containers)
 
 Steps 1 to 5, can be achieved by executing the shell script `03-generate-docker-image.sh`
+
+ref: dckr_pat_V5zbCBPzn4s_8Ae6i2E7PLL9h7k
