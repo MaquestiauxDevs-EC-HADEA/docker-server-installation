@@ -4,4 +4,4 @@ services:
     image: testsdocker:latest
     restart: always
     ports:
-      - 3000:3000
+      - 3010:3000
