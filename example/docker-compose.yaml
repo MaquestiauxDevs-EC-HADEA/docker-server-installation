@@ -1,0 +1,7 @@
+services:
+  backend:
+    container_name: testsdocker
+    image: testsdocker:latest
+    restart: always
+    ports:
+      - 3000:3000

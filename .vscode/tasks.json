@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [],
+			"label": "npm: dev",
+			"detail": "nodemon ./app/server.ts"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "npx tsc"
+		},
+		{
+			"type": "npm",
+			"script": "pm2-start",
+			"problemMatcher": [],
+			"label": "npm: pm2-start",
+			"detail": "npx tsc && pm2 start pm2.config.js"
+		},
+		{
+			"type": "npm",
+			"script": "pm2-restart",
+			"problemMatcher": [],
+			"label": "npm: pm2-restart",
+			"detail": "npx tsc && pm2 stop 0 && pm2 delete 0 && pm2 start pm2.config.js"
+		},
+		{
+			"type": "npm",
+			"script": "pm2-stop",
+			"problemMatcher": [],
+			"label": "npm: pm2-stop",
+			"detail": "pm2 stop 0 && pm2 delete 0"
+		}
+	]
+}

@@ -39,8 +39,11 @@ dckr_pat_V5zbCBPzn4s_8Ae6i2E7PLL9h7k
 
 1. Create a Dockerfile with the necessary commands.
 2. Create a docker-compose yaml file with the necessary information (eg. expose port, container name)
-3. Build your image `docker build -t testsdocker:latest .`
-4. Save the builed image as tar `docker save testsdocker:latest > testsdocker_latest.tar`
-5. Go in Portainer (https://localhost:9443/#!/2/docker/images) and import the create tar file
-6. Go in Portainer Stack (https://localhost:9443/#!/2/docker/stacks) and add a stack by uploading the docker-compose yaml file.
-7. The container should be running (https://localhost:9443/#!/2/docker/containers)
+3. Build your app (located into the example folder) `npx tsc` (transcode ts to js, The code should be builded into the ./dist folder)
+4. Build your image `docker build -t testsdocker:latest .`
+5. Save the builed image as tar `docker save testsdocker:latest > testsdocker_latest.tar`
+6. Go in Portainer (https://localhost:9443/#!/2/docker/images) and import the create tar file
+7. Go in Portainer Stack (https://localhost:9443/#!/2/docker/stacks) and add a stack by uploading the docker-compose yaml file.
+8. The container should be running (https://localhost:9443/#!/2/docker/containers)
+
+Steps 1 to 5, can be achieved by executing the shell script `03-generate-docker-image.sh`
