@@ -17,7 +17,7 @@ export class UserService {
       // e.g. orders
       query += " ORDER BY name";
       // e.g. paging (page, limit)
-      query += " OFFSET 9 ROWS FETCH FIRST 5 ROWS ONLY";
+      // query += " OFFSET 9 ROWS FETCH FIRST 5 ROWS ONLY";
     }
 
     const dbService = new DatabaseService();

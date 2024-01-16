@@ -18,6 +18,8 @@ const startServer = async () => {
   let tries = 0;
   const maxTries = 5;
 
+  console.log("Trying to connect to Oracle Database");
+
   while (tries < maxTries) {
     try {
       connection = await oracledb.getConnection(databaseConfig);
@@ -39,7 +41,9 @@ const startServer = async () => {
       next: NextFunction
     ) => {
       console.error(err.stack);
-      res.status(500).send("500: Internal Server Error");
+      res
+        .status(500)
+        .send("500: Internal Server Error : Cannot connect to the database");
     };
     app.use(errorHandler);
   } else {
