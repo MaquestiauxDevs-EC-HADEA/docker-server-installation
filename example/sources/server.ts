@@ -22,8 +22,6 @@ const startServer = async () => {
 
   while (tries < maxTries) {
     try {
-      console.log(databaseConfig);
-
       connection = await oracledb.getConnection(databaseConfig);
       console.log("Connected to Oracle Database");
       break;
