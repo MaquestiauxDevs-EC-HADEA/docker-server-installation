@@ -1,20 +1,5 @@
 FROM node:gallium
 
-ENV HTTP_PORT 3000
-ENV HTTP_HOST 0.0.0.0
-
-ENV MAIL_HOST hadea-btsf-maildev
-ENV MAIL_PORT 25
-ENV MAIL_ADMIN hadea-is@ext.ec.europa.eu
-ENV MAIL_NO_REPLY automated-notifications@nomail.ec.europa.eu
-
-ENV DATABASE_HOST hadea-btsf-database
-ENV DATABASE_PORT 1521
-ENV DATABASE_SID ORCLCDB
-ENV DATABASE_SERVICE_NAME ORCLCDB
-ENV DATABASE_USER HADEA_BTSF
-ENV DATABASE_USER_PWD eqntqgiwxp1$
-
 # Install oracle instant client
 # Create utils directory
 WORKDIR /opt/oracle
@@ -42,11 +27,11 @@ WORKDIR /usr/app
 # Copy the app code 
 COPY package*.json .
 RUN npm i
-COPY dist/server.js .
+COPY dist .
 
-COPY pm2.config.prod.js pm2.config.js
+COPY ecosystem.config.js .
 
 EXPOSE 3000
 
-CMD [ "pm2-runtime", "start", "pm2.config.js" ]
+CMD [ "pm2-runtime", "start", "ecosystem.config.js" ]
 
