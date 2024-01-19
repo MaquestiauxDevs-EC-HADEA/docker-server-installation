@@ -11,3 +11,5 @@ Repo : https://github.com/MaquestiauxTesting/docker-express-pm2
 5. Go in Portainer (https://localhost:9443/#!/2/docker/images) and import the create tar file
 6. Go in Portainer Stack (https://localhost:9443/#!/2/docker/stacks) and add a stack by uploading the docker-compose yaml file.
 7. The container should be running
+
+Steps 1 to 5, can be achieved by executing the shell script `03-generate-docker-image.sh`
