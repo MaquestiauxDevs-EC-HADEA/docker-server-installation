@@ -1,42 +1,17 @@
-version: '3.3'
+version: "3.3"
 
 services:
   pdb_ci_web:
-    build:
-      context: .
-    container_name: pdb_ci_web
+    image: example-php:dev
+    container_name: example-php
     volumes:
       - ./src:/usr/local/apache2/htdocs
     environment:
-      - DATABASE_HOST=pdb_ci_database
-      - DATABASE_PORT=1521 # CONTAINER port NOT the HOST port has it is visible in the created network
+      - DATABASE_HOST="172.17.0.2", // Use container ip as dockerised (!! Can change with portainer restart)
+      - DATABASE_PORT=1596
       - DATABASE_SID=ORCLCDB
       - DATABASE_SERVICE_NAME=ORCLCDB
       - DATABASE_USER=OU_PHEA_PHP_PRJ
       - DATABASE_USER_PWD=7ZOxAHWXjB
     ports:
       - 8000:80
-    networks:
-      - pdb_ci_network
-    depends_on:
-      - pdb_ci_database
-  pdb_ci_database:
-    image: oracle-database-2130
-    deploy:
-      resources:
-        limits:
-          memory: 3000M
-    container_name: pdb_ci_database
-    ports:
-      - "1599:1521"
-    environment:
-      - ORACLE_SID=ORCLCDB
-      - ORACLE_PDB=ORCLPDB
-      - ORACLE_PWD=Oracle4System
-      - ORACLE_MEM=2000
-    volumes:
-      - ./database/OracleDB/oradata:/opt/oracle/oradata
-    networks:
-      - pdb_ci_network
-networks:
-  pdb_ci_network:
