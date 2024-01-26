@@ -4,7 +4,7 @@ FROM node:gallium-slim
 # Create utils directory
 WORKDIR /opt/oracle
 RUN apt update && \
-    apt install libaio-dev wget unzip -y && \
+    apt install libaio-dev wget unzip nano -y && \
     wget https://download.oracle.com/otn_software/linux/instantclient/1912000/instantclient-basic-linux.x64-19.12.0.0.0dbru.zip && \
     unzip instantclient-basic-linux.x64-19.12.0.0.0dbru.zip && \
     rm -f instantclient-basic-linux.x64-19.12.0.0.0dbru.zip
