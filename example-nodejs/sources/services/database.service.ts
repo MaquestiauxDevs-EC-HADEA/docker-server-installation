@@ -6,6 +6,7 @@ class DatabaseService {
 
   constructor() {
     this.pool = oracledb.createPool(databaseConfig);
+    console.log("incodedbug:databaseservice:constructor", databaseConfig);
   }
 
   public async executeStatement(

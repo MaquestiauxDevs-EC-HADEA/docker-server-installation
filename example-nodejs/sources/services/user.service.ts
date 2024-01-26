@@ -19,6 +19,7 @@ export class UserService {
       // e.g. paging (page, limit)
       // query += " OFFSET 9 ROWS FETCH FIRST 5 ROWS ONLY";
     }
+    console.log("incodedbug:userservice", query);
 
     const dbService = new DatabaseService();
     let response: ExecutionMessageModel = {
