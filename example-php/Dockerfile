@@ -58,7 +58,6 @@ ENV PATH $PATH:/usr/local/oracle/instantclient
 # Run ldconfig to update the shared library cache
 RUN ldconfig /etc/ld.so.conf.d
 
-COPY ./src /usr/local/apache2/htdocs
 COPY ./configs/php.ini /etc/php8/php.ini
 COPY ./configs/www.conf /etc/php8/php-fpm.d/www.conf
 COPY ./configs/httpd.conf /usr/local/apache2/conf/httpd.conf
@@ -81,5 +80,9 @@ RUN make install
 RUN echo "extension=oci8.so" >> /etc/php8/conf.d/oci8.ini
 
 WORKDIR /usr/local/apache2/htdocs
+
+COPY ./sources .
+
+EXPOSE 80
 
 CMD ["supervisord","-n", "-c", "/etc/supervisor/supervisord.conf"]
