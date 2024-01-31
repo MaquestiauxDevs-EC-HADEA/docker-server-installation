@@ -5,7 +5,7 @@ if [ "$1" == "dev" ]; then
     docker image rm example-php:dev
     docker build -t example-php:dev .
     docker save example-php:dev > example-php-dev.tar
-    docker image rm example-php:dev
+    # docker image rm example-php:dev
 fi
 
 if [ "$1" == "prod" ]; then
