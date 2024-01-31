@@ -4,14 +4,12 @@ services:
   pdb_ci_web:
     image: example-php:dev
     container_name: example-php
-    volumes:
-      - ./src:/usr/local/apache2/htdocs
     environment:
-      - DATABASE_HOST="172.17.0.2", // Use container ip as dockerised (!! Can change with portainer restart)
-      - DATABASE_PORT=1596
+      - DATABASE_HOST="172.17.0.7", // Use container ip as dockerised (!! Can change with portainer restart)
+      - DATABASE_PORT=1521
       - DATABASE_SID=ORCLCDB
       - DATABASE_SERVICE_NAME=ORCLCDB
       - DATABASE_USER=OU_PHEA_PHP_PRJ
       - DATABASE_USER_PWD=7ZOxAHWXjB
     ports:
-      - 8000:80
+      - 8001:80
