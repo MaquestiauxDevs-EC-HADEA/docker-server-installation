@@ -1,11 +1,14 @@
-version: "3.3"
-
 services:
   pdb_ci_web:
-    image: example-php:dev
+    # image: example-php:dev
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: example-php
+    volumes:
+      - ./sources:/usr/local/apache2/htdocs
     environment:
-      - DATABASE_HOST="172.17.0.7", // Use container ip as dockerised (!! Can change with portainer restart)
+      - DATABASE_HOST=172.17.0.7
       - DATABASE_PORT=1521
       - DATABASE_SID=ORCLCDB
       - DATABASE_SERVICE_NAME=ORCLCDB
@@ -13,3 +16,5 @@ services:
       - DATABASE_USER_PWD=7ZOxAHWXjB
     ports:
       - 8001:80
+
+    network_mode: bridge
