@@ -1,5 +1,5 @@
 services:
-  pdb_ci_web:
+  example-php:
     container_name: example-php
     image: example-php:dev
     # build:
