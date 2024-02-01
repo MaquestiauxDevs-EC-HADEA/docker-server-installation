@@ -7,11 +7,11 @@ $sid = getenv('DATABASE_SID');
 $username = getenv('DATABASE_USER');
 $password = getenv('DATABASE_USER_PWD');
 
-echo "host: " . $host . "<br>";
-echo "port: " . $port . "<br>";
-echo "sid: " . $sid . "<br>";
-echo "username: " . $username . "<br>";
-echo "password: " . $password . "<br>";
+// echo "host: " . $host . "<br>";
+// echo "port: " . $port . "<br>";
+// echo "sid: " . $sid . "<br>";
+// echo "username: " . $username . "<br>";
+// echo "password: " . $password . "<br>";
 
 // Check if required environment variables are set
 if (!$host || !$port || !$sid || !$username || !$password || empty($host) || empty($port) || empty($sid) || empty($username) || empty($password)) {

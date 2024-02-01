@@ -1,12 +1,12 @@
 services:
   pdb_ci_web:
-    # image: example-php:dev
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: example-php
-    volumes:
-      - ./sources:/usr/local/apache2/htdocs
+    image: example-php:dev
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # volumes:
+    #   - ./sources:/usr/local/apache2/htdocs
     environment:
       - DATABASE_HOST=172.17.0.7
       - DATABASE_PORT=1521
