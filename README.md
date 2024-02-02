@@ -54,3 +54,26 @@ Steps 1 to 5, can be achieved by executing the shell script `03-generate-docker-
 If, mainly while development, you are using docker Bridged IP Address, before rebuilding the image you will have to retrieve the correct IP as they are by default different.
 
 ref: dckr_pat_V5zbCBPzn4s_8Ae6i2E7PLL9h7k
+
+## Network
+
+Create the network
+
+```
+docker network create --subnet=172.20.0.0/16 --gateway=172.20.0.1 --ip-range=172.20.10.0/24 --opt com.docker.network.bridge.name=local-network local-network
+```
+
+Use the network and assign a ipv4 address
+
+```
+version: '3.9'
+services:
+  my-service:
+    image: my-image
+    networks:
+      local-network:
+        ipv4_address: 172.20.10.5
+networks:
+  local-network:
+    external: true
+```
