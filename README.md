@@ -49,4 +49,8 @@ Environment address: 10.0.0.10:9001
 
 Steps 1 to 5, can be achieved by executing the shell script `03-generate-docker-image.sh`
 
+## Warning
+
+If, mainly while development, you are using docker Bridged IP Address, before rebuilding the image you will have to retrieve the correct IP as they are by default different.
+
 ref: dckr_pat_V5zbCBPzn4s_8Ae6i2E7PLL9h7k
