@@ -1,6 +1,7 @@
 FROM httpd:2.4-alpine3.16
 
 RUN apk update
+RUN apk add nano
 RUN apk add gcompat
 RUN apk add libc6-compat
 RUN apk add git
