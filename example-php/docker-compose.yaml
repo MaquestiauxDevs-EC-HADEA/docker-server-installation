@@ -16,5 +16,9 @@ services:
       - DATABASE_USER_PWD=7ZOxAHWXjB
     ports:
       - 8001:80
-
-    network_mode: bridge
+    networks:
+      local-network:
+        ipv4_address: 172.20.10.15
+networks:
+  local-network:
+    external: true
