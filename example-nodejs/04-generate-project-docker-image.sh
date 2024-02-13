@@ -12,7 +12,7 @@ echo "First arg: $1"
 
 npm run build
 
-if [ "$1" == "dev" ]; then
+if [ "$1" = "dev" ]; then
     yes | cp ecosystem.dev.config.js ecosystem.config.js
     echo "Running in development mode"
     npm run build
@@ -22,7 +22,7 @@ if [ "$1" == "dev" ]; then
     docker image rm example-nodejs-pm2:dev
 fi
 
-if [ "$1" == "prod" ]; then
+if [ "$1" = "prod" ]; then
     yes | cp ecosystem.prod.config.js ecosystem.config.js
     echo "Running in production mode"
     npm run build

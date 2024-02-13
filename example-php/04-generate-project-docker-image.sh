@@ -9,7 +9,7 @@ if [ "$#" -eq 0 ]; then
 fi
 
 echo "First arg: $1"
-if [ "$1" == "dev" ]; then
+if [ "$1" = "dev" ]; then
     echo "Running in development mode"
     yes | cp configs/supervisor/supervisord.dev.conf configs/supervisor/supervisord.conf
     docker image rm example-php:dev
@@ -23,7 +23,7 @@ if [ "$1" == "dev" ]; then
     fi
 fi
 
-if [ "$1" == "prod" ]; then
+if [ "$1" = "prod" ]; then
     echo "Running in production mode"
     yes | cp configs/supervisor/supervisord.prod.conf configs/supervisor/supervisord.conf
     docker image rm example-php:latest
