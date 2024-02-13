@@ -16,7 +16,7 @@ if [ "$1" = "dev" ]; then
     docker build -t example-php:dev .
     docker save example-php:dev > example-php-dev.tar
     echo "Second arg: $2"
-    if [ "$2" == "up" ]; then
+    if [ "$2" = "up" ]; then
         docker compose up
     else
         docker image rm example-php:dev
