@@ -1,6 +1,17 @@
-#!/bin/bash
-npm run build
+#!/usr/bin/zsh
+echo "*****************************"
+echo "Create App and Generate the Docker image"
+echo "*****************************"
+
+if [ "$#" -eq 0 ]; then
+    echo "Error: No argument provided. Please provide 'dev' or 'prod'."
+    exit 1
+fi
+
 echo "First arg: $1"
+
+npm run build
+
 if [ "$1" == "dev" ]; then
     yes | cp ecosystem.dev.config.js ecosystem.config.js
     echo "Running in development mode"
